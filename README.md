@@ -31,4 +31,4 @@ print(words)*3
 wordswordswords
 ```
 - 可以适用len（a）来测量出a字符串的长度，是整型
-
+如图： ![len测量长度](./picture/2021-08-10_18-40.png)
