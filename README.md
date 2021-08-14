@@ -16,6 +16,28 @@
         - [习题](#%E4%B9%A0%E9%A2%98)
     - [需要知道的运算符](#%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6)
 - [逻辑控制与循环](#%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%BE%AA%E7%8E%AF)
+    - [布尔类型](#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B)
+    - [逻辑运算符](#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6)
+        - [常见的相同比较类型](#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%9B%B8%E5%90%8C%E6%AF%94%E8%BE%83%E7%B1%BB%E5%9E%8B)
+        - [不同类型的比较](#%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83)
+        - [布尔类型的比较](#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83)
+    - [成员运算符和身份运算符](#%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6)
+        - [列表](#%E5%88%97%E8%A1%A8)
+            - [创建列表](#%E5%88%9B%E5%BB%BA%E5%88%97%E8%A1%A8)
+            - [添加元素](#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0)
+            - [访问元素](#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0)
+    - [布尔运算](#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97)
+        - [bool（）](#bool)
+        - [None](#none)
+        - [运算符](#%E8%BF%90%E7%AE%97%E7%AC%A6)
+    - [条件控制if---else](#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6if---else)
+    - [循环](#%E5%BE%AA%E7%8E%AF)
+        - [for循环基本格式](#for%E5%BE%AA%E7%8E%AF%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F)
+        - [嵌套循环](#%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF)
+        - [while循环](#while%E5%BE%AA%E7%8E%AF)
+        - [练习](#%E7%BB%83%E4%B9%A0)
+    - [综合练习](#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)
+- [数据结构](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
 
 <!-- /TOC -->
 
@@ -153,3 +175,220 @@ print('  *',' **','***',' | ',sep='\n' )
 |//|返回商的整数部分|
 
 # 逻辑控制与循环
+## 布尔类型
+![](pictures/布尔类型.png)
+- 只有0和1两个值，也就是false和true
+## 逻辑运算符
+
+|符号|描述|
+|---|---|
+|==|判等|
+|!=|不等于|
+|>|大于|
+|<|小于|
+|>=|大于等于|
+|<=|小于等于|
+### 常见的相同比较类型
+1. 常量的比较
+2. 变量的比较
+3. 字符串的比较，区分大小写
+4. 函数的结果比较
+### 不同类型的比较
+- 不能用>,<,>=,<=进行比较，可以用==，!=进行比较
+- 浮点类型和整型可以进行比较
+### 布尔类型的比较
+- 把false当成0,true当成1,运算完就可以进行比较
+## 成员运算符和身份运算符
+### 列表
+#### 创建列表
+1. 空列表`album=[]`
+2. 非空列表`album=['Black','david',25,false]`
+#### 添加元素
+> album.append('new str')
+#### 访问元素
+- album[0],album[-1]代表第一个和最后一个元素
+***
+- 所以in可以这样用
+> 'Black' in album
+- is可以这样用
+> album[1] is album[-4]
+- is和in可以加上not来否定
+## 布尔运算
+### bool（）
+- 除了0,None和所有空的序列和集合（列表、字典、集合）的布尔值为空，其他都是true.可以用bool（）来判断。
+### None
+- 如果一个函数没有返回值，却赋值给了一个变量，那么这个变量就是None
+- 在定义一个变量的时候，没想好赋值，那么可以赋值为None
+### 运算符
+- 有一下几个
+
+|符号|描述|
+|---|---|
+|not|否定|
+|and|并且的意思|
+|or|或者的意思|
+- or 有真则真，and有假则假
+## 条件控制if---else
+- 一个模拟密码登陆系统
+1. 普通思路
+![](pictures/ifelse1.png)
+2. 布尔值传入判断
+![](pictures/ifelse2.png)
+- 用elif来模拟密码重置
+![](pictures/elif.png)
+## 循环
+### for循环基本格式
+![](pictures/for循环.png)
+- 一般用法
+```python
+for num in rang(1,11):
+    print(str(num)+'+1=',sum+1)
+```
+- rang,不包含11,所以是1-10的整数
+```python
+songslists=['holy','tharuk','rebel]
+for song in songslists:
+    if song=='holy:
+        print(song,'-Dio')
+    elif song=='tharuk':
+        print(song,'-AC/DC')
+    elif song=='rebel':
+        print(song,'-david')
+```
+### 嵌套循环
+- 打印乘法口诀表
+```python
+def fuction():
+    tmp=0
+    for i in range(1,10):
+        for j in range(1,i+1):
+            print('{}X{}={}\t'.format(j,i,i*j),end=' ')
+        print()
+fuction();
+```
+### while循环
+- 基本语法
+![](pictures/while.png)
+- while循环要注意，不能死循环
+- 可以构成while-else循环结构
+```python
+tries=3
+while tries>0:
+    ***
+else:
+    ***
+```
+### 练习
+1. 设计函数，在桌面上创建10个文本，分别是数字1-10.txt
+```python
+def fuction():
+    for num in range(1,11):
+        file=open('/home/keri/Desktop/'+str(num)+'.txt','w')
+fuction();
+```
+2. 编写一个函数，参数包含资金、利率、投资时间，返回投资时间内的每年的金额
+```python
+def fuction(amount,rate,time):
+    for num in range(1,int(time)+1):
+        amount = amount * (1+rate/100)
+        print("Year{}:${}".format(num,amount))
+fuction(100,5,8)
+```
+3. 打印1-100之内的偶数
+```python
+def fuction():
+    for num in range(1,101):
+        if num%2==0:
+            print(num,end="\t")
+fuction()
+```
+## 综合练习
+1. 随机生成三个数字，让用户去猜大小，大应在11-18之间，小应该在3-10之间
+```python
+import random
+def fuction(str):
+    list=[0,0,0]
+    list[0] = random.randrange(1,7)
+    list[1] = random.randrange(1,7)
+    list[2] = random.randrange(1,7)
+    if(sum(list)>10):
+        result='big'
+    else:
+        result='small'
+    print("the list are [{},{},{}]".format(list[0], list[1], list[2]))
+    if(result==str):
+        print('you are win')
+    else:
+        print('you are lose')
+
+str=input('输入：\n')
+fuction(str)
+```
+2. 基于前一个练习，编写一个投注游戏，初始金额1000,赔率默认1,输光为止
+```python
+import random
+def fuction():
+    list = [0, 0, 0]
+    money=1000
+    while money>0:
+        print('-----   STSRT   -----')
+        str=input('big or small?')
+        duzhu=input('how mush you wanna bet?')
+        if (0<int(duzhu)<=money):
+            list[0] = random.randrange(1, 7)
+            list[1] = random.randrange(1, 7)
+            list[2] = random.randrange(1, 7)
+            if (sum(list) > 10):
+                result = 'big'
+            else:
+                result = 'small'
+            print('-----ROLL THE DICE!-----')
+            print("the list are [{},{},{}]".format(list[0], list[1], list[2]))
+            if (result == str):
+                money = money + int(duzhu)
+                print('you are win,you gained {}'.format(duzhu))
+            else:
+                money=money-int(duzhu)
+                print('you are lose,you lost {}'.format(duzhu))
+            print('you have {} now'.format(money))
+        else:
+            print('invaild input!')
+    else:
+        print('-----   OVER    -----')
+
+fuction()
+```
+3. 检测一个号码是否合法
+```python
+import random
+def fuction(str):
+    oper=None
+    CN_mobile=[134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705]
+    CN_union=[130,131,132,155,156,185,186,145,176,1709]
+    CN_telecom=[133,153,180,181,189,177,1700]
+    if len(str)==11:
+        if str[:3]=='170':
+            if str[3]=='5':
+                oper='CN_mobile'
+            elif str[3]=='9':
+                oper='CN_union'
+            elif str[3]=='0':
+                oper='CN)_telecom'
+        else:
+            if int(str[0:3]) in CN_mobile:
+                oper = 'CN_mobile'
+            elif int(str[0:3]) in CN_union:
+                oper = 'CN_union'
+            elif int(str[0:3]) in CN_telecom:
+                oper = 'CN)_telecom'
+        if oper:
+            print("Operator:{}".format(oper))
+            print('我们将发送验证码到号码：{}'.format(str))
+        else:
+            print('不是合法的号码')
+    else:
+        print('不是11位号码，重新输入')
+str=input('输入号码：\n')
+fuction(str)
+```
+# 数据结构
