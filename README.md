@@ -38,6 +38,30 @@
         - [练习](#%E7%BB%83%E4%B9%A0)
     - [综合练习](#%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0)
 - [数据结构](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
+    - [列表](#%E5%88%97%E8%A1%A8)
+        - [列表的访问](#%E5%88%97%E8%A1%A8%E7%9A%84%E8%AE%BF%E9%97%AE)
+    - [字典](#%E5%AD%97%E5%85%B8)
+        - [字典的访问](#%E5%AD%97%E5%85%B8%E7%9A%84%E8%AE%BF%E9%97%AE)
+    - [元组](#%E5%85%83%E7%BB%84)
+    - [集合](#%E9%9B%86%E5%90%88)
+    - [数据结构的相关技巧](#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E7%9B%B8%E5%85%B3%E6%8A%80%E5%B7%A7)
+        - [排序](#%E6%8E%92%E5%BA%8F)
+        - [两个列表的循环](#%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E5%BE%AA%E7%8E%AF)
+        - [推导式](#%E6%8E%A8%E5%AF%BC%E5%BC%8F)
+    - [综合项目-字频统计](#%E7%BB%BC%E5%90%88%E9%A1%B9%E7%9B%AE-%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1)
+- [类](#%E7%B1%BB)
+    - [定义](#%E5%AE%9A%E4%B9%89)
+    - [实例化](#%E5%AE%9E%E4%BE%8B%E5%8C%96)
+    - [在类中定义函数](#%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0)
+    - [类的初始化函数](#%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0)
+        - [初始化函数的其他参数](#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0)
+    - [类的继承](#%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF)
+- [使用第三方库](#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93)
+    - [查找](#%E6%9F%A5%E6%89%BE)
+    - [安装](#%E5%AE%89%E8%A3%85)
+        - [Pycharm安装](#pycharm%E5%AE%89%E8%A3%85)
+        - [pip工具安装](#pip%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85)
+        - [手动安装](#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85)
 
 <!-- /TOC -->
 
@@ -392,3 +416,158 @@ str=input('输入号码：\n')
 fuction(str)
 ```
 # 数据结构
+- 列表、字典、元组、集合
+![](pictures/数据结构分类.png)
+- 如图所示，列表用中括号，元组是小括号，而字典和集合用的是大括号，不同的是字典是一个键对应一个值，中间用冒号隔开
+## 列表
+1. 列表中的每个元素都是可变的
+2. 列表中的每个元素都是有序的，每个元素都有一个位置
+3. 列表可以容纳任何一种对象
+### 列表的访问
+- 插入 `list.insert(1,'str')`在list[1],list[0]之后插入元素，如果被插入的元素不在列表中，则插到最后。
+- `fruit[0:0]='str'`同样可以插入元素，这样就可以把一个切片插到头
+- `list.remove('str')`是删除列表中str元素，也可以通过`del list[1:5]`,来删除切片
+- `list[4]='str'`是替换掉原本内容
+## 字典
+1. 数据必须以键-值形式成对出现
+2. 键不能重复，值可以重复
+3. 键不可变，值却可以改成任何对象
+### 字典的访问
+- 添加单个元素
+`dict['YOUKU']='Youku'`
+- 添加多个元素
+`dict.update({'FB':'FaceBook','TSLA':'Tesla'})`
+- 删除元素,索引字典元素时可以用方括号括键
+`del dict['FB']`
+- 字典不能切片
+## 元组
+- 可以看成是一个不可修改的列表
+- 可以被查看
+## 集合
+- 集合不能被切片、索引
+- 可以做集合运算
+- `set.add(5)`添加元素，`set.discard(5)`删除元素
+## 数据结构的相关技巧
+### 排序
+- 从大到小排序 
+`print(sorted(num_list))`
+- 逆序排列
+`print(sorted(num_list，reverse=True))`
+### 两个列表的循环
+`for a,b in zip(list_a,list_b):`
+- 俩个列表同时开始循环
+### 推导式
+- 把十个连续的整数加入列表中
+```python
+a=[]
+for i in range(1,11):
+    a.append(i)
+```
+```python
+a=[i for i in range(1,11)]
+```
+- 两个代码实现了同样的功能
+- 第二个方法就是列表解析式，不仅方便，而且执行效率比第一种方法高很多
+- 计时
+```python
+import time
+t0=time.clock()
+......
+time.chock()-t0 ##这个计算的结果为前面程序执行所花的时间
+```
+- 推导式的其他几个列子
+![](pictures/推导式.png)
+- 字典的推导
+![](pictures/推导式.png)
+- 循环时获取索引
+```python
+letters=['a','b','c','d','d','e','f','g']
+for num,letter in enumerater(letters):
+    print(letter,'is',num)
+## num 就是索引
+```
+## 综合项目-字频统计
+![](pictures/字频统计.png)
+- `strip(string.punctuation).lower()`把包含符号的去掉，并且所有字母转换为小写
+- 用set()，把列表转换为集合，就自动去除了重复的元素
+- 创建了以单词为键，频率为值的字典
+- 最后按照频率大小，即键值大小从小到大来顺序输出字典
+# 类
+## 定义
+- *类是有一些系列有共同特征和行为事务的抽象概念总和*
+- 下面都是以可乐为例子来描述类的概念
+```python
+class CocaCola:
+    formual=['caffine','suga','water','soda']
+```
+- 方括号里装的是元素称之为类的属性
+## 实例化
+```
+coke_for_you=CocaCola()
+print(COcaCola.formula)
+print(coke_for_me.forula)
+```
+```python
+for element in coke_for_me.formula:
+    print(element)
+```
+- 这样就逐个打印出来属性
+- `coke_for_you.logo='可口可乐'，这是在类属性之外创建的实列属性
+## 在类中定义函数
+```python
+class CocaCola:
+    formual=['caffine','suga','water','soda']
+    def drink(self):
+        print('energy!')
+##引用
+coke=CocoCola()
+coke.drink()
+```
+- 其中self代表函数实列本身来作为函数的参数输入
+- 如果想要其他参数，而不是本身作为输入参数，`def drink(self,how_mush)`之后在调用时`coke.drink('a sip')`
+## 类的初始化函数
+```python
+class CocaCola:
+    formual=['caffine','suga','water','soda']
+    def _init_(self):
+        self.local_logo='可口可乐'
+    def drink(self):
+        print('energy!')
+##引用
+coke=CocoCola()
+print(coke.local_logo)
+```
+- 只要类被引用，那该函数就自动执行
+### 初始化函数的其他参数
+```python
+class CocaCola:
+    formual=['caffine','suga','water','soda']
+    def _init_(self,logo_name):
+        self.local_logo=logo_name
+    def drink(self):
+        print('energy!')
+##引用
+coke=CocoCola('可口可乐')
+print(coke.local_logo)
+```
+## 类的继承
+![](pictures/父类.png)
+![](pictures/子类.png)
+- 父类的属性和方法被完全继承
+- 子类可以覆盖重写，创建属性和方法
+# 使用第三方库
+## 查找
+1. 网站`awesome-python.com`按分类查找
+2. 通过搜索引擎来寻找需要的内容
+## 安装
+### Pycharm安装
+> file->setting->project ** ->** interpreter ->`点击+`->搜索-> 安装
+### pip工具安装
+1. pip(3) install ** ## 默认方式安装
+2. python(3) -m pip install ** ## python2、3分目录安装
+3. pip install --upgrade pip ## 更新pip本身
+### 手动安装
+- 到`pypi.python.org`上搜索需要的包
+1. 如果是exe格式，直接点击安装
+2. 如果是whl格式，命令行切换到下载的路径，然后输入`pip3 install ***.whl`
+3. 如果是压缩包形式的源码，解压好之后，命令行切换到那个目录，一般有setup.py,输入`python3 setup.py install`
