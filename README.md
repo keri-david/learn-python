@@ -64,7 +64,7 @@
     - [手动安装](#手动安装)
 
 # 学习文档
-[Python课程](./python课程.pdf)
+[Python课程](./Python入门书.pdf)
 # Python环境的搭建
 
 ## python安装
